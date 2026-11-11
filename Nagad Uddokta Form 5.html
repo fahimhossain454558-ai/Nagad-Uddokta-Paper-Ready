@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>নগদ উদ্যোক্তা ফরম - পৃষ্ঠা ০৫</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@500;700&display=swap">
+<style>
+:root{--bg:#dcdce0;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1b1b1f}}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);font-family:'Hind Siliguri','Noto Sans Bengali',Arial,sans-serif;color:#111}
+.toolbar{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;padding:10px}
+@font-face{font-family:'BnHand';src:url('FNMahin.otf') format('opentype');unicode-range:U+0980-09FF,U+0964-0965,U+200C-200D,U+09F3;font-display:swap}
+@font-face{font-family:'EnHand';src:url('CaveatRegular.ttf') format('truetype');unicode-range:U+0020-007E,U+00A0-00FF,U+2010-2027;font-display:swap}
+.free,.fld{font-family:'EnHand','BnHand','UserBn','FN Mahin Eraboti SAU Unicode','FN Mahin Eraboti SAU','FN Mahin Eraboti','Hind Siliguri',Arial,sans-serif!important}
+.toolbar button{font-family:inherit;font-weight:600;font-size:14px;padding:8px 18px;border:0;border-radius:8px;background:#e2231a;color:#fff;cursor:pointer}
+.toolbar .alt{background:#444}
+.toolbar .mv{background:#1a5fd0;min-width:44px}
+.toolbar button{touch-action:manipulation;-webkit-user-select:none;user-select:none}
+.grp{display:flex;align-items:center;gap:6px;background:rgba(0,0,0,.08);padding:4px 8px;border-radius:10px}
+.grp span{font-size:12px;font-weight:600}
+#stage{margin:0 auto;overflow:hidden}
+.page{position:relative;width:1271px;height:1798px;background:#fff;transform-origin:top left;color:#111}
+.page>*{position:absolute}
+.t{white-space:nowrap;line-height:1.2;font-weight:500}
+.fld{display:flex;align-items:center;white-space:pre;overflow:visible;line-height:1.3;cursor:text;outline:none;color:#111;-webkit-user-select:text;user-select:text}
+.fld:focus,.fld.sel{z-index:7}
+.fld.sel{outline:1.5px dashed #e2231a}
+.fld:empty::before{content:attr(data-ph);color:#111;opacity:.4;font-size:16px;font-weight:500;pointer-events:none;white-space:pre;font-family:'Hind Siliguri','Noto Sans Bengali',Arial,sans-serif}
+.f{border:1.6px solid #222;background:#fff;font-size:18px;font-weight:500;padding:0 8px;border-radius:0}
+.cell{border:0;background:transparent;font-size:18px;font-weight:500;padding:0 6px}
+.cell:focus{background:#fff5f4}
+.ln{background:#222}
+.bd{font-family:'Noto Sans Bengali','Hind Siliguri',sans-serif;font-weight:700;font-size:1.04em}
+.free{position:absolute;min-width:30px;white-space:pre;font-weight:500;line-height:1.3;outline:none;color:#111;padding:0 6px;z-index:5;cursor:text;min-height:26px}
+#msg{flex-basis:100%;text-align:center;font-size:13px;font-weight:600;color:#e2231a;min-height:18px}
+.free:focus{outline:1.5px dashed #e2231a}
+.free.sel{outline:1.5px dashed #e2231a;background:rgba(226,35,26,.06)}
+.cb{appearance:none;-webkit-appearance:none;width:19px;height:19px;border:1.6px solid #222;background:#fff;padding:0;margin:0;cursor:pointer;z-index:4}
+.tk{pointer-events:none;z-index:6}
+.cbh{border:0!important;background:transparent!important;width:30px;height:24px;outline:none;-webkit-tap-highlight-color:transparent;z-index:4}
+.par{font-size:17px;line-height:25px;white-space:nowrap;font-weight:500}
+.dot{height:0;border-bottom:1.6px dotted #222}
+@media print{
+ body{background:#fff}.toolbar{display:none}.free,.free.sel{outline:none!important;background:transparent!important}
+ .fld.sel,.fld:focus{outline:none!important}
+ #stage{width:210mm!important;height:297mm!important;margin:0}
+ .page{transform:scale(.6247)!important}
+ @page{size:A4;margin:0}
+}
+</style>
+</head>
+<body>
+<div class="toolbar"><button onclick="window.print()">প্রিন্ট / PDF</button><button onclick="setFont()">ফন্ট বসান</button><div class="grp"><span>সাইজ</span><button class="alt" data-fs="-2">A−</button><button class="alt" data-fs="2">A+</button></div><div class="grp"><span>বোল্ড/হালকা</span><button class="alt" data-lv="1" style="font-weight:800">B +</button><button class="alt" data-lv="-1" style="font-weight:400">হালকা −</button></div><div class="grp"><span>উপর/নিচ</span><button class="mv" data-mv="0,-3">↑</button><button class="mv" data-mv="0,3">↓</button></div><div class="grp"><span>বাম/ডান</span><button class="mv" data-mv="-3,0">←</button><button class="mv" data-mv="3,0">→</button></div><button class="alt" onclick="clearAll()">মুছুন</button><button class="alt" onclick="goPrev()">◀ ফরম ৪</button><div id="msg"></div></div>
+<div id="stage"><div class="page" id="page"></div></div>
+<script>
+var P=document.getElementById('page');
+var K=1271/924;function s(v){return +(v*K).toFixed(1)}
+function E(c,s2,h){var d=document.createElement('div');d.className=c;d.style.cssText=s2;if(h)d.innerHTML=h;P.appendChild(d);return d}
+function T(x,y,h,o){o=o||{};return E('t','left:'+x+'px;top:'+y+'px;font-size:'+(o.fs||18)+'px;'+(o.b?'font-weight:700;':'')+(o.c?'transform:translate(-50%,-50%);text-align:center;':'transform:translateY(-50%);')+(o.s||''),h)}
+function mkFld(cls,x1,y1,x2,y2,ph){var d=document.createElement('div');d.className='fld '+cls;d.style.cssText='left:'+x1+'px;top:'+y1+'px;width:'+(x2-x1)+'px;height:'+(y2-y1)+'px';d.contentEditable='plaintext-only';if(d.contentEditable!=='plaintext-only')d.contentEditable='true';d.spellcheck=false;d.setAttribute('autocomplete','off');if(ph)d.dataset.ph=ph;P.appendChild(d);return d}
+function F(x1,y1,x2,y2,ph,cls){return mkFld('f '+(cls||''),x1,y1,x2,y2,ph)}
+function L(x,y,w,h){E('ln','left:'+x+'px;top:'+y+'px;width:'+w+'px;height:'+h+'px')}
+function FI(a,b,c,d,ph,cls){return F(s(a),s(b),s(c),s(d),ph,cls)}
+function TI(x,y,h,o){return T(s(x),s(y),h,o)}
+function LH(x,y,w,t){L(s(x),s(y),s(w),t)}
+function LV(x,y,t,h){L(s(x),s(y),t,s(h))}
+function bn(n){return String(n).replace(/\d/g,function(d){return '০১২৩৪৫৬৭৮৯'[d]})}
+
+/* ---- এই পৃষ্ঠার সহায়ক ফাংশন (সব মাপ ৯২৪ প্রস্থের স্কেলে) ---- */
+function X(x,y,h,o){o=o||{};o.fs=o.fs||22;return TI(x,y,h,o)}
+function CBp(y){var i=document.createElement('input');i.type='checkbox';i.className='cb';i.style.left='0px';i.style.top=(s(y)-9.5)+'px';i.addEventListener('change',function(){tick(i)});P.appendChild(i);return i}
+var ROWS=[];
+/* ROW: একই লাইনে অপশনগুলো লেখার মাপ অনুযায়ী পরপর বসে; after থাকলে x0 = ওই লেখার পরে ফাঁক(px) */
+function ROW(y,x0,labels,gap,dot,after){var r={y:y,x0:x0,gap:gap,dot:dot,after:after||null,items:[]};labels.forEach(function(l){r.items.push([CBp(y),X(0,y,l)])});ROWS.push(r);return r}
+function layoutRows(){ROWS.forEach(function(r){
+  var x=r.after?(parseFloat(r.after.style.left)+r.after.offsetWidth+r.x0):s(r.x0);
+  r.items.forEach(function(it){it[0].style.left=x+'px';it[1].style.left=(x+28)+'px';x=x+28+it[1].offsetWidth+r.gap});
+  if(r.dot){var x1=x-r.gap+6,x2=s(898);
+    if(!r.dl){r.dl=E('dot','top:'+s(r.y+6)+'px');r.df=mkFld('f cell',0,0,10,10,'');}
+    r.dl.style.left=x1+'px';r.dl.style.width=Math.max(0,x2-x1)+'px';
+    r.df.style.left=x1+'px';r.df.style.top=(s(r.y+6)-28)+'px';r.df.style.width=Math.max(0,x2-x1)+'px';r.df.style.height='30px';}
+})}
+function DOT(x1,x2,y){E('dot','left:'+s(x1)+'px;top:'+s(y)+'px;width:'+s(x2-x1)+'px');FI(x1,y-20,x2,y+2,'','cell')}
+
+/* হেডার */
+TI(462,97,'গণপ্রজাতন্ত্রী বাংলাদেশ সরকার',{c:1,fs:16});
+TI(462,113,'বাংলাদেশ ডাক বিভাগ',{c:1,fs:16});
+E('','left:'+s(358)+'px;top:'+s(138)+'px;width:'+s(228)+'px;height:'+s(100)+'px','<img src="logo.png" style="width:100%;height:100%;display:block;pointer-events:none;object-fit:contain" alt="">');
+var TTL=TI(481,295,'আবেদনকারী উদ্যোক্তা পরিদর্শন রিপোর্ট',{c:1,fs:36});
+
+/* উপরের টেবিল */
+LH(42,330,859,1.6);LH(42,367,859,1.2);LH(42,404,859,1.2);LH(42,442,859,1.6);
+LV(42,330,1.6,112);LV(900,330,1.6,112);LV(186,330,1.2,112);
+X(52,349,'মোবাইল নাম্বার');X(52,386,'দোকানের নাম');X(52,423,'দোকানের ঠিকানা');
+FI(188,331,899,366,'','cell');FI(188,368,899,403,'','cell');FI(188,405,899,441,'','cell');
+
+/* ১-২ */
+var q1=X(42,478,'১। দোকানের ধরন:');FI(q1?170:170,466,420,490,'','cell');
+TI(638,478,'২। ব্যবসার প্রকৃতি কোড নাম্বার:',{fs:22,s:'transform:translate(-100%,-50%);'});FI(646,458,900,497,'');
+
+/* ৩ */
+X(42,510,'৩। দোকানের অবস্থান:');
+ROW(540,76,['মহাসড়কের পাশে','এলাকার প্রধান সড়কের পাশে','বাজারের ভেতরে','অন্যান্য (নির্দিষ্ট করুন):'],22,true);
+
+/* ৪ */
+var q4=X(42,573,'৪। দোকানের গঠন:');
+ROW(573,20,['স্থায়ী','অস্থায়ী'],26,false,q4);
+
+/* ৫ */
+var q5=X(42,603,'৫। দোকান কার দ্বারা পরিচালিত হয়?');
+ROW(603,26,['মালিক','আত্মীয়','কর্মচারী'],80,false,q5);
+X(75,634,'যদি আত্মীয়/কর্মচারী হন, তবে নাম ও জাতীয় পরিচয়পত্রের নাম্বার লিখুন:');
+X(75,665,'নাম:');DOT(116,590,671);X(600,665,'এনআইডি:');DOT(672,898,671);
+
+/* ৬ */
+var q6=X(42,696,'৬। অন্য কোনো এমএফএস-এর ব্যবসা পরিচালনা করা হয়?');
+ROW(696,20,['না','হ্যাঁ (যদি হ্যাঁ হয়, তাহলে নিম্নে উল্লেখ করুন)'],24,false,q6);
+ROW(728,76,['রকেট','বিকাশ','উপায়','ট্যাপ','অন্যান্য, (নির্দিষ্ট করুন):'],26,true);
+
+/* ৭ */
+X(42,763,'৭। ব্যবসা পরিচালনাকারীর শিক্ষাগত যোগ্যতা কী?');
+ROW(792,76,['এসএসসি বা এর নিচে','এইচএসসি','স্নাতক বা স্নাতকোত্তর','অন্যান্য (নির্দিষ্ট করুন):'],24,true);
+
+/* ৮ */
+X(42,823,'৮। প্রাথমিক বিনিয়োগের পরিমাণ?');
+ROW(853,76,['৫০,০০০-এর নিচে','৫০,০০০-১০০,০০০','১০০,০০০-৫০০,০০০','৫০০,০০০-এর অধিক'],34,false);
+
+/* ৯ */
+var q9=X(42,884,'৯। ব্যবসায়িক সুনামঃ');
+ROW(884,26,['সন্তোষজনক','সন্তোষজনক নয়'],30,false,q9);
+
+/* ঘোষণা (পুরো প্রস্থে বসানো লাইন) */
+var D1=TI(42,914,'আমি ঘোষনা করছি যে, আমি সশরীরে আবেদনকৃত উদ্যোক্তার দোকান পরিদর্শন করেছি। উদ্যোক্তা কেওয়াইসি-তে উল্লিখিত সমস্ত তথ্য যাচাই',{fs:20});
+var D2=TI(42,938,'করেছি এবং আমার জানামতে সকল তথ্য সত্য ও সঠিক পেয়েছি।',{fs:20});
+var D3=TI(42,1060,'আমি এই মর্মে ঘোষনা করছি যে, সশরীরে ও সরেজমিনে পরিদর্শনপূর্বক উপরের তথ্যগুলো যাচাই করা হয়েছে এবং সঠিক হিসেবে পাওয়া গিয়েছে।',{fs:20});
+
+/* বক্স ১ : ডিএসও */
+LH(42,958,859,1.6);LH(42,1042,859,1.6);LV(42,958,1.6,84);LV(900,958,1.6,84);
+X(75,983,'নাম:');FI(112,968,415,998,'','cell');
+X(428,983,'পদবি: ডিস্ট্রিবিউশন সেলস অফিসার (ডিএসও)');
+X(75,1022,'স্বাক্ষর:');FI(122,1007,415,1037,'','cell');
+X(428,1022,'তারিখ:');FI(472,1007,895,1037,'','cell');
+
+/* চূড়ান্ত মন্তব্য */
+X(42,1113,'চূড়ান্ত মন্তব্য:');DOT(128,898,1119);
+
+/* বক্স ২ : ডিএস/ডিএম */
+LH(42,1137,859,1.6);LH(42,1221,859,1.6);LV(42,1137,1.6,84);LV(900,1137,1.6,84);
+X(75,1158,'নাম:');FI(112,1143,415,1173,'','cell');
+X(428,1158,'পদবি: ডিস্ট্রিবিউশন সুপারভাইজার/ম্যানেজার (ডিএস/ডিএম)');
+X(75,1196,'স্বাক্ষর:');FI(122,1181,415,1211,'','cell');
+X(428,1196,'তারিখ:');FI(472,1181,895,1211,'','cell');
+
+/* footer */
+E('','left:0;top:'+s(1236)+'px;width:1271px;height:'+s(38)+'px;background:#232323');
+T(635,s(1255),'nagad.com.bd &nbsp;|&nbsp; 096 096 16167 &nbsp;|&nbsp; ☏ 16167',{c:1,fs:23,s:'color:#fff;letter-spacing:3px;font-family:Arial,sans-serif;font-weight:600'});
+
+/* লাইনগুলো ঠিক প্রস্থে বসানো */
+function fitLines(){
+  var W=s(851),f=40;
+  [D1,D3].forEach(function(e){e.style.fontSize='40px';f=Math.min(f,40*W/e.offsetWidth)});
+  [D1,D2,D3].forEach(function(e){e.style.fontSize=f+'px'});
+  TTL.style.fontSize='40px';TTL.style.fontSize=(40*s(412)/TTL.offsetWidth)+'px';
+  layoutRows();
+}
+
+/* custom font, saved in this browser */
+function db(cb){var r=indexedDB.open('nf',1);r.onupgradeneeded=function(){r.result.createObjectStore('s')};r.onsuccess=function(){cb(r.result)}}
+function sv(k,v){try{db(function(d){d.transaction('s','readwrite').objectStore('s').put(v,k)})}catch(e){}}
+function ld(k,f){try{db(function(d){var q=d.transaction('s').objectStore('s').get(k);q.onsuccess=function(){if(q.result)f(q.result)}})}catch(e){}}
+function useFont(buf,show){var ff=new FontFace('UserBn',buf);ff.load().then(function(){document.fonts.add(ff);if(show)msg('ফন্ট বসানো হয়েছে ✓')}).catch(function(){msg('ফন্ট লোড হয়নি — .otf বা .ttf ফাইল দিন')})}
+function pick(acc,cb){var i=document.createElement('input');i.type='file';i.accept=acc;i.style.display='none';i.onchange=function(){if(i.files[0])cb(i.files[0]);i.remove()};document.body.appendChild(i);i.click()}
+function setFont(){pick('',function(f){f.arrayBuffer().then(function(b){sv('font',b.slice(0));useFont(b,true)})})}
+ld('font',useFont);
+
+/* free typing */
+var FS=20,SEL=null,DLV=0,LAST=null;
+function select(d){if(d)LAST=d;if(SEL&&SEL!==d)SEL.classList.remove('sel');SEL=d;if(d)d.classList.add('sel')}
+function msg(t){var m=document.getElementById('msg');m.textContent=t;clearTimeout(msg.t);msg.t=setTimeout(function(){m.textContent=''},3500)}
+function applyLv(d,l){l=Math.max(-8,Math.min(14,l));d.dataset.lv=l;d.style.webkitTextStroke=l>0?(l*.2)+'px currentColor':'';var g=17+(-l)*22;d.style.color=l<0?'rgb('+g+','+g+','+g+')':''}
+function mkFree(x,y){var d=document.createElement('div');d.className='free';d.contentEditable='true';d.style.left=x+'px';d.style.top=(y-14)+'px';d.style.fontSize=FS+'px';applyLv(d,DLV);P.appendChild(d);d.addEventListener('focus',function(){if(d.textContent.trim())select(d)});d.addEventListener('input',function(){select(d)});d.addEventListener('blur',function(){if(!d.textContent.trim()){if(SEL===d)SEL=null;d.remove()}});d.focus();return d}
+P.addEventListener('click',function(e){var t=e.target;if(t.tagName=='INPUT')return;if(t.closest&&t.closest('.fld'))return;if(t.classList.contains('free'))return;var r=P.getBoundingClientRect(),k=r.width/1271;mkFree((e.clientX-r.left)/k,(e.clientY-r.top)/k)});
+function fs(d){if(SEL&&document.body.contains(SEL)){var cur=parseFloat(getComputedStyle(SEL).fontSize)||FS;SEL.style.fontSize=Math.max(8,Math.min(150,cur+d))+'px'}else{msg('আগে যে ঘরের সাইজ বদলাবেন সেই ঘরে ক্লিক করুন')}}
+function mv(dx,dy){if(!SEL){msg('আগে যে লেখাটি সরাবেন তার ওপর ক্লিক করে সিলেক্ট করুন');return}
+ if(SEL.classList.contains('fld')){var pl=parseFloat(SEL.dataset.ox)||0,pt=parseFloat(SEL.dataset.oy)||0;pl+=dx;pt+=dy;SEL.dataset.ox=pl;SEL.dataset.oy=pt;
+  var base=SEL.classList.contains('cell')?6:8;
+  SEL.style.paddingLeft=Math.max(0,base+pl)+'px';SEL.style.paddingRight=Math.max(0,base-pl)+'px';SEL.style.paddingTop=Math.max(0,pt)+'px';SEL.style.paddingBottom=Math.max(0,-pt)+'px';return}
+ var l=parseFloat(SEL.style.left)||0,t=parseFloat(SEL.style.top)||0;SEL.style.left=Math.max(0,Math.min(1251,l+dx))+'px';SEL.style.top=Math.max(-10,Math.min(1778,t+dy))+'px'}
+function lv(dl){if(LAST&&document.body.contains(LAST)){applyLv(LAST,(+LAST.dataset.lv||0)+dl)}else{DLV=Math.max(-8,Math.min(14,DLV+dl));msg('নতুন লেখার জন্য '+(DLV>0?'বোল্ড':DLV<0?'হালকা':'সাধারণ')+' সেট হলো')}}
+document.addEventListener('focusin',function(e){var t=e.target;if(!t.classList)return;if(t.classList.contains('fld')){select(t);LAST=t;return}if(t.classList.contains('free')&&t.textContent.trim())LAST=t});
+document.addEventListener('keydown',function(e){var t=e.target;if(t.classList&&t.classList.contains('fld')&&e.key==='Enter')e.preventDefault()});
+document.addEventListener('paste',function(e){var t=e.target;if(t.classList&&t.classList.contains('fld')){e.preventDefault();var s2=((e.clipboardData||window.clipboardData).getData('text')||'').replace(/[\r\n]+/g,' ');document.execCommand('insertText',false,s2)}});
+document.addEventListener('input',function(e){var t=e.target;if(t.classList&&t.classList.contains('fld')&&t.textContent===''&&t.firstChild)t.innerHTML=''});
+function hold(btn,fn){var t,iv;function stop(){clearTimeout(t);clearInterval(iv)}btn.addEventListener('mousedown',function(e){e.preventDefault()});btn.addEventListener('contextmenu',function(e){e.preventDefault()});btn.addEventListener('pointerdown',function(e){e.preventDefault();stop();fn();t=setTimeout(function(){iv=setInterval(fn,45)},350)});['pointerup','pointerleave','pointercancel'].forEach(function(n){btn.addEventListener(n,stop)})}
+document.querySelectorAll('[data-fs]').forEach(function(b){hold(b,function(){fs(+b.dataset.fs)})});
+document.querySelectorAll('[data-lv]').forEach(function(b){hold(b,function(){lv(+b.dataset.lv)})});
+document.querySelectorAll('[data-mv]').forEach(function(b){var v=b.dataset.mv.split(',');hold(b,function(){mv(+v[0],+v[1])})});
+/* clearer Bengali digits */
+document.querySelectorAll('.t').forEach(function(e){e.innerHTML=e.innerHTML.replace(/[০-৯]+/g,'<span class="bd">$&</span>')});
+var PREV_FORM='Nagad Uddokta Form 4.html';
+function goPrev(){window.location.href=PREV_FORM}
+/* কলমে আঁকা টিক */
+var TK=0;
+function tick(i){
+ if(i._tk){i._tk.remove();i._tk=null}
+ if(!i.checked)return;
+ var r=function(a,b){return a+Math.random()*(b-a)};
+ var x=parseFloat(i.style.left),y=parseFloat(i.style.top),id='tkf'+(++TK);
+ var sx=10+r(-1.5,1.5),sy=29+r(-1.5,1.5),bx=19+r(-1.5,1.5),by=41+r(-1,1.5),ex=47+r(-3,2),ey=5+r(-2,3);
+ var d='M'+sx.toFixed(1)+' '+sy.toFixed(1)+' C'+(sx+3).toFixed(1)+' '+(sy+3.5).toFixed(1)+' '+(bx-3).toFixed(1)+' '+(by-4).toFixed(1)+' '+bx.toFixed(1)+' '+by.toFixed(1)+' C'+(bx+4).toFixed(1)+' '+(by-9).toFixed(1)+' '+(ex-14).toFixed(1)+' '+(ey+13).toFixed(1)+' '+ex.toFixed(1)+' '+ey.toFixed(1);
+ var w=r(2.4,3.1).toFixed(2);
+ var h='<svg width="52" height="52" viewBox="0 0 52 52" style="overflow:visible;transform:rotate('+r(-4,4).toFixed(1)+'deg)"><defs><filter id="'+id+'" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="'+Math.floor(r(1,99))+'" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="1.6"/></filter></defs><g filter="url(#'+id+')"><path d="'+d+'" fill="none" stroke="#10193a" stroke-width="'+w+'" stroke-linecap="round" stroke-linejoin="round"/><path d="'+d+'" fill="none" stroke="#1b2a63" stroke-width="'+(w*.45).toFixed(2)+'" stroke-linecap="round" stroke-linejoin="round" opacity=".75" transform="translate(.5 -.4)"/></g></svg>';
+ i._tk=E('tk','left:'+(x-8)+'px;top:'+(y-22)+'px;width:52px;height:52px',h)}
+function clearAll(){document.querySelectorAll('.tk').forEach(function(e){e.remove()});document.querySelectorAll('input[type=checkbox]').forEach(function(i){i._tk=null;i.checked=false});document.querySelectorAll('.free').forEach(function(e){e.remove()});document.querySelectorAll('.fld').forEach(function(i){i.textContent=''});SEL=null;LAST=null}
+function fit(){var k=Math.min(1,(window.innerWidth-12)/1271),s2=document.getElementById('stage');P.style.transform='scale('+k+')';s2.style.width=(1271*k)+'px';s2.style.height=(1798*k)+'px'}
+window.addEventListener('resize',fit);fit();fitLines();if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitLines);window.addEventListener('load',fitLines);
+</script>
+</body>
+</html>
